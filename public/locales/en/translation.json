@@ -1,0 +1,19 @@
+{
+    "ButtonBack":"Back",
+    "ButtonNext":"Next",
+    "ButtonSubmit":"Submit",
+    "QuestionOne" : "What percentage of the number 150 is the number 18?",
+    "QuestionTwo" : "Using only the digits 3, 2, 5, and 8, form two-digit even and two-digit odd numbers. How many such numbers can be formed in total?",
+    "QuestionThree" : "Write the largest three-digit, four-digit, five-digit, and six-digit numbers.",
+    "QuestionFour" : "Find the difference between the largest three-digit number and the smallest two-digit number.",
+    "QuestionFive" : "Nodir picked 28 flowers. Aziz picked 4 times fewer flowers. How many flowers did Aziz pick?",
+    "QuestionSix" : "In one row there were 27 fig trees, and in the other row there were 2 times more. How many fig trees are in the other row?",
+    "QuestionSeven" : "Calculate.",
+    "QuestionEight" : "If the dividend and divisor are equal to each other, what is the result of the division?",
+    "QuestionNine" : "There are 102 students in the first grade, and 14 more students in the second grade. How many students are there in the first and second grades in total?",
+    "QuestionTen" : "There were 70 kilograms of carrots in two bags. One bag had 4 kilograms less carrots than the other. How many kilograms of carrots were in each bag?",
+    "QuestionEleven" : "Two people cut a log in 8 minutes. How many minutes are needed to cut the log into 6 pieces?",
+    "QuestionTwelve" : "The length of the Syr River is 2663 km, and the length of the Amu River is 369 km shorter. If the length of the Panj River is 1373 km shorter than the length of the Amu River, what is the length of the Panj River?",
+    "QuestionThirteen" : "There were 80 kg of grapes in four identical boxes. How many such boxes are needed to store 160 kg of grapes? Create and solve the reverse problem.",
+    "QuestionFourteen" : "A rectangular bird feeder was made with a length of 60 cm and a width of 10 cm. Find the perimeter of this feeder."
+}

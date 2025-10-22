@@ -1,0 +1,111 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  background-color: #eee;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-height: 90svh; */
+  /* background: red; */
+}
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+/* .swiper-pagination.custom-pagination {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+} */
+
+/* .swiper-pagination-bullet {
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 18px;
+  color: #000;
+  opacity: 1;
+  background: #A9A9A9;
+  margin: 0 5px;
+  padding: 5px;
+} */
+
+/* .swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+} */
+
+/* .swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: absolute;
+  top: 0px;
+  bottom: inherit;
+  display: flex ;
+  justify-content: space-between;
+  width: 96%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 0;
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* .swiper-pagination{
+  overflow: auto;
+} */
+.shadowButton
+{
+  box-shadow: 0 10px 15px -3px rgba(0, 191, 255, 0.516), 0 4px 6px -2px rgba(0, 183, 255, 0.352);
+}
+.shadowButton2
+{
+  box-shadow: 0 10px 15px -3px rgba(255, 0, 0, 0.516), 0 4px 6px -2px rgba(255, 0, 0, 0.352);
+}
+
+#resultSection
+{
+  /* background: var(--bg); */
+  /* background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%); */
+  background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
+  /* background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%); */
+  /* background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%); */
+}
