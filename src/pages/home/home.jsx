@@ -35,11 +35,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   const [logicCnt, setLogicCnt] = useState(0);
-  const [mathCnt, setMathCnt] = useState(0);
   const [lang, setLang] = useState(localStorage.getItem("i18nextLng") || "en");
 
   const [submitingModal, setSubmitingModal] = useState(false);
-  const [text, setText] = useState("");
+  const [, setText] = useState("");
 
   const swiperRef = useRef(null);
   const handleNextSlide = () => {
@@ -96,7 +95,7 @@ const Home = () => {
     AOS.init();
   }, []);
 
-  const [test, setTest] = useState([
+  const [test] = useState([
     [
       {
         id: 1,
@@ -355,7 +354,7 @@ const Home = () => {
 
   const sendMessage = async () => {
     try {
-      const { data } = await axios.post(
+      await axios.post(
         `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`,
         {
           chat_id: chatId,
@@ -374,7 +373,7 @@ const Home = () => {
 
   const [testObj, setTestObj] = useState([]);
   const [idArray, setIdArray] = useState([]);
-  const [sumOfResult, setSumOfResult] = useState(1);
+  const [, setSumOfResult] = useState(1);
 
   function checkCorrectAnswer(id, isCorrect) {
     if (!idArray.includes(id)) {
@@ -437,15 +436,7 @@ const Home = () => {
     },
   };
 
-  const Finish = {
-    type: "adv",
-    question: {
-      en: "Finish",
-      ru: "Заканчивать",
-      tj: "Завершить",
-    },
-  };
-  const [translateArray, setTranslateArray] = useState([
+  const [translateArray] = useState([
     {
       question: {
         en: "Write the answer here , Please .",
@@ -495,22 +486,22 @@ const Home = () => {
     setLogicCnt(count);
   }, [testObj, test]);
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "ArrowRight") {
-        handleNextSlide();
-      } else if (e.key === "ArrowLeft") {
-        handlePrevSlide();
-      }
-    };
+  // useEffect(() => {
+  //   const handleKeyDown = (e) => {
+  //     if (e.key === "ArrowRight") {
+  //       handleNextSlide();
+  //     } else if (e.key === "ArrowLeft") {
+  //       handlePrevSlide();
+  //     }
+  //   };
 
-    window.addEventListener("keydown", handleKeyDown);
+  //   window.addEventListener("keydown", handleKeyDown);
 
-    // Cleanup function to remove event listener
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+  //   // Cleanup function to remove event listener
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
 
   const [isActiveSlide, setIsActiveSlide] = useState(0);
   function changeActiveSlide() {
@@ -683,10 +674,19 @@ const Home = () => {
             keyboard={{ enabled: true }}
           >
             <SwiperSlide className="p-[20px] text-[#333d79ff]">
-              <div className="rounded-[20px] dark:bg-white/10 dark:text-[#eee] p-[20px] w-[100vw] bg-white relative min-h-[59svh] lg:min-h-[70svh] flex justify-center items-center ">
-                <p className="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[80px] 2xl:text-[100px] font-bold tracking-[1px]">
-                  {MathAdv.question[i18n.language]}
-                </p>
+              <div className="rounded-[20px] dark:bg-white/10 dark:text-[#eee] p-[20px] w-[100vw] bg-white relative min-h-[59svh]  flex-1  lg:min-h-[70svh] ">
+                <div className="flex justify-center min-h-[300px] items-center ">
+                  {" "}
+                  <p className="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[80px] 2xl:text-[100px] font-bold tracking-[1px]">
+                    {MathAdv.question[i18n.language]}
+                  </p>
+                </div>
+                <button
+                  className="shadowButton bg-[#12A0EA] text-white lg:text-[20px] lg:p-[10px_50px] p-[5px_20px] text-[18px] font-[600] tracking-[1px] rounded-md"
+                  onClick={handleNextSlide}
+                >
+                  {t("ButtonNext")}
+                </button>
               </div>
             </SwiperSlide>
 
@@ -708,13 +708,11 @@ const Home = () => {
                       {el.type == "input" ? (
                         <div>
                           {el.img && (
-                            <div className="w-[100%] lg:w-[25%]  m-auto overflow-y-hidden ">
-                              <img
-                                src={el.img || "/placeholder.svg"}
-                                alt="picture"
-                                className="w-[100%] object-cover"
-                              />
-                            </div>
+                            <img
+                              src={el.img || "/placeholder.svg"}
+                              alt="picture"
+                              className="max-h-[400px]"
+                            />
                           )}
                           <input
                             type="text"
@@ -730,13 +728,11 @@ const Home = () => {
                       ) : el.type == "select" ? (
                         <div>
                           {el.img && (
-                            <div className="w-[100%] lg:w-[25%]  m-auto overflow-y-hidden ">
-                              <img
-                                src={el.img || "/placeholder.svg"}
-                                alt="picture"
-                                className="w-[100%] object-cover"
-                              />
-                            </div>
+                            <img
+                              src={el.img || "/placeholder.svg"}
+                              alt="picture"
+                              className="max-h-[400px]"
+                            />
                           )}
                           <div className="flex flex-wrap lg:flex-col xl:flex-wrap xl:flex-row gap-[30px]  w-[100%]">
                             {el.img
@@ -807,13 +803,11 @@ const Home = () => {
                       ) : (
                         <div className="flex gap-4 items-center  flex-col">
                           {el.img && (
-                            <div className="w-[100%] lg:w-[25%]  m-auto overflow-y-hidden ">
-                              <img
-                                src={el.img || "/placeholder.svg"}
-                                alt="picture"
-                                className="w-[100%] object-cover"
-                              />
-                            </div>
+                            <img
+                              src={el.img || "/placeholder.svg"}
+                              alt="picture"
+                              className="max-h-[400px]"
+                            />
                           )}
                           <input
                             type="text"
@@ -861,7 +855,7 @@ const Home = () => {
               </SwiperSlide>
             ))}
 
-            {logicRandomTest?.map((el, index) => (
+            {logicRandomTest?.map((el) => (
               <SwiperSlide
                 key={el.id}
                 className="p-[20px] text-[#333d79ff] overflow-y-scroll"
