@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
+import  { useState } from "react";
 
 
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Switcher from "../../components/Swicher";
 import SoftClubIcon from "/src/assets/img/softclub.svg";
-import sc3dicon from "/src/assets/img/sc3dicon.svg";
 import test from "/src/assets/img/testicon.webp"
 import { useTranslation } from "react-i18next";
 
-const Login = ({ marginTop }) => {
+const Login = () => {
 
   const [lang, setLang] = useState(localStorage.getItem("i18nextLng") || "en");
 
 
   const { t, i18n } = useTranslation();
 
-  console.log(i18n);
 
   const changeLanguage = async (language) => {
     setLang(language);
@@ -23,7 +21,6 @@ const Login = ({ marginTop }) => {
   };
 
 
-  const isDarkMode = localStorage.getItem("theme");
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -47,7 +44,7 @@ const Login = ({ marginTop }) => {
     }
   }
 
-    const [translateArray , setTranslateArray] = useState(
+    const [translateArray , ] = useState(
       [
         {
           title:"Sign up",
@@ -95,7 +92,7 @@ const Login = ({ marginTop }) => {
       <div className="flex flex-col gap-5 w-[100%] xl:w-[35%] xl:min-h-[70vh]">
         <div className="flex justify-between items-center p-[10px_30px] w-[100%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[100%] xl:p-[0_40px] md:p-0 m-[0_auto]">
           <img src={SoftClubIcon} alt="" className="w-[30%]" />
-          
+
           <div className="flex items-center gap-4">
             <Switcher/>
             <select
@@ -114,8 +111,8 @@ const Login = ({ marginTop }) => {
               </option>
             </select>
           </div>
-        
-          
+
+
         </div>
         <form
           onSubmit={login}
@@ -124,7 +121,7 @@ const Login = ({ marginTop }) => {
           <p className="lg:text-[30px] font-bold text-[20px] tracking-[1px] text-[#2196f3]">{translateArray[0].question[i18n.language]}</p>
 
           <input type="text" className="w-[100%] dark:bg-transparent dark:border-white dark:text-white p-[5px_10px] text-[20px] rounded-md outline-none border-[2px] border-gray-300" placeholder={translateArray[1].question[i18n.language]} value={name} onChange={(e) => setName(e.target.value)} />
-          
+
           <div className="flex gap-2 items-center rounded-md border-[2px] border-gray-300 dark:bg-transparent dark:border-white dark:text-white p-[5px_10px]">
             <p className="text-[20px] text-gray-400">+992</p>
             <input maxLength={9} minLength={9} type="text" className="w-[100%]  text-[20px] outline-none bg-transparent" placeholder={translateArray[3].question[i18n.language]} value={phoneNumber} onChange={passNumberToInput} />

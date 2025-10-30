@@ -105,9 +105,9 @@ const Home = () => {
           ru: "В трёх корзинах N яблок. Сколько яблок в каждой корзине, если в первой корзине яблок в 2 раза больше, чем во второй, а во второй на 2 яблока больше, чем в третьей?",
           tj: "Дар се сабад N себ ҳаст. Дар ҳар як сабад чанд себ мавҷуд аст, агар дар сабади якум назар ба сабади дуюм 2 маротиба зиёд ва дар дуюм аз сеюм 2 дона зиёд бошад?",
         },
-        a1: { correct: false, variant: "3: (N-5)/4, 2: (N+3)/4 , 1: (N+1)/2" },
-        a2: { correct: true, variant: " 3: (N-6)/4, 2: (N+2)/4 , 1: (N+2)/2" },
-        a3: { correct: false, variant: "3: (N-6)/4, 2: (N+3)/4 , 1: (N+4)/2" },
+        a1: { correct: false, variant: "3: (N-5)/4\n 2: (N+3)/4\n 1: (N+1)/2" },
+        a2: { correct: true, variant: " 3: (N-6)/4\n 2: (N+2)/4\n 1: (N+2)/2" },
+        a3: { correct: false, variant: "3: (N-6)/4\n 2: (N+3)/4\n 1: (N+4)/2" },
       },
       {
         id: 19,
@@ -189,7 +189,7 @@ const Home = () => {
         a1: { correct: false, variant: "infinity" },
         a2: { correct: false, variant: "Error" },
         a3: { correct: true, variant: "No output" },
-        a4: { correct: false, variant: "8,9,10" },
+        a4: { correct: false, variant: " 1 2 3 4 5 6 " },
       },
       {
         id: 3323,
@@ -200,10 +200,10 @@ const Home = () => {
           tj: "Ҳисоб кунед",
         },
         img: q15,
-        a1: { correct: false, variant: "###5#7###11#13#" },
-        a2: { correct: true, variant: "###5#7###11#13##" },
-        a3: { correct: false, variant: "##5#7####11#13##" },
-        a4: { correct: false, variant: "###5#7###11#13###" },
+        a1: { correct: false, variant: "###5#7###11#13##" },
+        a2: { correct: true, variant: "###5#7###11#13###" },
+        a3: { correct: false, variant: "###5#7##11#13###" },
+        a4: { correct: false, variant: "##5#7###11#13###" },
       },
       {
         id: 3324,
@@ -215,18 +215,21 @@ const Home = () => {
         },
         img: q16,
         a1: {
-          correct: true,
-          variant: "Odd Even Odd Even Odd Even Odd Even Odd",
+          correct: false,
+          variant: "Odd\nEven\nOdd\nEven\nOdd\nEven\nOdd\nEven\nOdd\nEven",
         },
         a2: {
-          correct: false,
-          variant: "Odd Even Odd Even Odd Even Odd Even Odd Even",
+          correct: true,
+          variant: "Odd\nEven\nOdd\nEven\nOdd\nEven\nOdd\nEven\nOdd",
         },
         a3: {
           correct: false,
-          variant: "Odd Even Odd Even Odd Even  Even Odd Odd",
+          variant: "Odd\nEven\nOdd\nEven\nOdd\nEven\nOdd\nEven\nOdd ",
         },
-        a4: { correct: false, variant: "Odd Even Odd Even" },
+        a4: {
+          correct: false,
+          variant: "Even\nOdd\nEven\nOdd\nEven\nOdd\nEven\nOdd",
+        },
       },
     ],
     [
@@ -274,16 +277,16 @@ const Home = () => {
       },
       {
         id: 19,
-        type: "input",
+        type: "select",
         question: {
           en: "What percentage is the number 20 of the number 180?",
-          ru: "какой процент составляет число 20 от числа 180.",
+          ru: "Какой процент составляет число 20 от числа 180?",
           tj: "20 чанд фоизи адади 180 аст?",
         },
-        a1: { correct: true, variant: "11.11" },
-        a2: { correct: false, variant: "45" },
-        a3: { correct: false, variant: "12" },
-        a4: { correct: false, variant: "16" },
+        a1: { correct: true, variant: "11.11" }, // дуруст
+        a2: { correct: false, variant: "10.9" }, // тақрибан монанд
+        a3: { correct: false, variant: "12.0" }, // тақрибан монанд
+        a4: { correct: false, variant: "16.0" }, // фарқ каме бештар
       },
       {
         id: 1239,
@@ -302,14 +305,14 @@ const Home = () => {
         id: 32,
         type: "select",
         question: {
-          en: "Calculate. 800 cm = ... dm",
-          ru: "Вычислите. 800 см = ... дм",
-          tj: "Ҳисоб кунед. 800 см = ... дм",
+          en: "Calculate:\n800 cm = ... dm\n120 min = ... hours\n9000 g = ... kg\n1 t = ... kg",
+          ru: "Вычислите:\n800 см = ... дм\n120 мин = ... ч\n9000 г = ... кг\n1 т = ... кг",
+          tj: "Ҳисоб кунед:\n800 см = ... дм\n120 дақ = ... соат\n9000 г = ... кг\n1 т = ... кг",
         },
-        a1: { correct: true, variant: "80" },
-        a2: { correct: false, variant: "8" },
-        a3: { correct: false, variant: "4" },
-        a4: { correct: false, variant: "3" },
+        a1: { correct: true, variant: "80\n2\n9\n1000" }, // дуруст: 800 см=80 дм, 120 дақ=2 соат, 9000 г=9 кг, 1т=1000кг
+        a2: { correct: false, variant: "8\n1\n90\n100" },
+        a3: { correct: false, variant: "4\n3\n8\n10" },
+        a4: { correct: false, variant: "3\n5\n7\n1" },
       },
       {
         id: 323,
@@ -677,7 +680,10 @@ const Home = () => {
               <div className="rounded-[20px] dark:bg-white/10 dark:text-[#eee] p-[20px] w-[100vw] bg-white relative min-h-[59svh]  flex-1  lg:min-h-[70svh] ">
                 <div className="flex justify-center min-h-[300px] items-center ">
                   {" "}
-                  <p className="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[80px] 2xl:text-[100px] font-bold tracking-[1px]">
+                  <p
+                    style={{ whiteSpace: "pre-line" }}
+                    className="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[80px] 2xl:text-[100px] font-bold tracking-[1px]"
+                  >
                     {MathAdv.question[i18n.language]}
                   </p>
                 </div>
@@ -699,7 +705,10 @@ const Home = () => {
                 <div className="rounded-[20px] bg-opacity-50 backdrop-filter backdrop-blur-md dark:bg-white/10 dark:text-[#eee]  p-[20px] min-w-[100%] max-w-[100%] bg-white relative min-h-[59svh] lg:min-h-[70svh]  flex flex-col justify-between">
                   <div>
                     <div className="border-b-[2px] border-b-[#E5E7EB] p-[0px_0px_20px_0px]">
-                      <p className="text-[18px] lg:text-[40px] font-bold">
+                      <p
+                        style={{ whiteSpace: "pre-line" }}
+                        className="text-[18px] lg:text-[40px] font-bold"
+                      >
                         {el.question[i18n.language]}
                       </p>
                     </div>
@@ -744,7 +753,10 @@ const Home = () => {
                                         key={idx}
                                         className="flex items-center w-[100%] lg:w-[100%] xl:w-[48%] gap-3"
                                       >
-                                        <p className="lg:text-[30px] font-bold text-[18px]">
+                                        <p
+                                          style={{ whiteSpace: "pre-line" }}
+                                          className="lg:text-[30px] font-bold text-[18px]"
+                                        >
                                           {letters[idx]}&#x29;
                                         </p>
 
@@ -760,7 +772,10 @@ const Home = () => {
                                             name={`radio-${el.id}`}
                                             className="w-[20px] h-[20px]"
                                           />
-                                          <p className="text-[20px] font-[600]">
+                                          <p
+                                            style={{ whiteSpace: "pre-line" }}
+                                            className="text-[20px] font-[600]"
+                                          >
                                             {answer.variant}
                                           </p>
                                         </div>
@@ -775,7 +790,10 @@ const Home = () => {
                                         key={idx}
                                         className="flex items-center w-[100%] lg:w-[100%] xl:w-[48%] gap-3"
                                       >
-                                        <p className="lg:text-[30px] font-bold text-[18px]">
+                                        <p
+                                          style={{ whiteSpace: "pre-line" }}
+                                          className="lg:text-[30px] font-bold text-[18px]"
+                                        >
                                           {letters[idx]}&#x29;
                                         </p>
 
@@ -791,7 +809,10 @@ const Home = () => {
                                             name={`radio-${el.id}`}
                                             className="w-[20px] h-[20px]"
                                           />
-                                          <p className="text-[20px] font-[600]">
+                                          <p
+                                            style={{ whiteSpace: "pre-line" }}
+                                            className="text-[20px] font-[600]"
+                                          >
                                             {answer.variant}
                                           </p>
                                         </div>
@@ -863,7 +884,10 @@ const Home = () => {
                 <div className="rounded-[20px] dark:bg-white/10 dark:text-[#eee]  backdrop-filter backdrop-blur-[10px] p-[20px] min-w-[100%] max-w-[100%] bg-white relative min-h-[auto]  sm:min-h-[80svh] lg:min-h-[70svh]  flex flex-col justify-between">
                   <div>
                     <div className="border-b-[2px] border-b-[#E5E7EB] p-[0px_0px_20px_0px]">
-                      <p className="text-[18px] lg:text-[25px] 2xl:text-[35px] font-bold">
+                      <p
+                        style={{ whiteSpace: "pre-line" }}
+                        className="text-[18px] lg:text-[25px] 2xl:text-[35px] font-bold"
+                      >
                         {el.question[i18n.language]}
                       </p>
                     </div>
@@ -890,7 +914,10 @@ const Home = () => {
                                   key={idx}
                                   className="lg:p-[20px] p-[10px] rounded-md border-[2px] border-[#E5E7EB] flex items-center gap-[10px] w-[100%] lg:w-[48%]"
                                 >
-                                  <p className="lg:text-[30px] font-bold text-[18px]">
+                                  <p
+                                    style={{ whiteSpace: "pre-line" }}
+                                    className="lg:text-[30px] font-bold text-[18px]"
+                                  >
                                     {letters[idx]}
                                   </p>
                                   <input
@@ -901,7 +928,10 @@ const Home = () => {
                                     name={`radio-${el.id}`}
                                     className="w-[20px] h-[20px]"
                                   />
-                                  <p className="text-[20px] font-[600]">
+                                  <p
+                                    style={{ whiteSpace: "pre-line" }}
+                                    className="text-[20px] font-[600]"
+                                  >
                                     {answer.variant}
                                   </p>
                                 </div>
