@@ -67,13 +67,11 @@ const Home = () => {
   }, [swiperRef?.current?.swiper?.slides]);
 
   useEffect(() => {
-    console.log(swiperSlideLength);
     const array = [];
     for (let i = 0; i < swiperSlideLength; i++) {
       array.push(i);
     }
     setSwiperMap(array);
-    console.log(swiperMap);
   }, [swiperSlideLength]);
 
   function goToSlide(num) {
@@ -84,7 +82,6 @@ const Home = () => {
 
   const { t, i18n } = useTranslation();
 
-  console.log(i18n);
 
   const changeLanguage = async (language) => {
     setLang(language);
@@ -344,12 +341,10 @@ const Home = () => {
       return test[0];
     };
     setMathRandomTest(randomMath);
-    console.log(randomMath);
     const randomLogic = () => {
       return test[1];
     };
     setLogicRandomTest(randomLogic);
-    console.log(randomLogic);
   }, [test]);
 
   const token = "8132985338:AAFA-ylibwpoxkME3Jva4--Dxbqr_xWmJQ8";
@@ -383,7 +378,6 @@ const Home = () => {
       setIdArray((prevState) => [...prevState, id]);
       setTestObj((prevState) => [...prevState, { [id]: isCorrect }]);
     } else {
-      console.log(id, isCorrect);
       setTestObj((prevState) => {
         const index = idArray.indexOf(id);
         const updatedTestObj = [...prevState];
@@ -410,7 +404,6 @@ const Home = () => {
   const count = useSelector((state) => state.Home.count);
 
   useEffect(() => {
-    console.log(testObj);
     let count = 0;
     testObj.forEach((el) => {
       const values = Object.values(el).at(0);
@@ -420,7 +413,6 @@ const Home = () => {
     });
     dispatch(setCount(count));
     setSumOfResult(Math.round(count * 3.225));
-    console.log(`True Count: ${count}, Sum of Result: ${count * 3.225}`);
   }, [testObj, dispatch]);
 
   const Name = localStorage.getItem("Name");
@@ -509,7 +501,6 @@ const Home = () => {
   const [isActiveSlide, setIsActiveSlide] = useState(0);
   function changeActiveSlide() {
     setIsActiveSlide(swiperRef.current.swiper.activeIndex);
-    console.log(isActiveSlide);
   }
 
   return (
